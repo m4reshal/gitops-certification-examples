@@ -42,7 +42,9 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
-      nodeSelector:
+      #nodeSelector:
+      nodeSelector: ocpdev-255bx-worker-jvg8x
+        kubernetes.io/hostname: ocpdev-255bx-worker-jvg8x
         {{- toYaml . | nindent 8 }}
       {{- end }}
     {{- with .Values.affinity }}
